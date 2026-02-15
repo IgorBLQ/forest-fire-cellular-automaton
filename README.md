@@ -110,7 +110,7 @@ Interpretation:
 
 Generated figure:
 
-`results/humidity_analysis.png`
+`results\humidity_analysis.png`
 
 This figure displays mean burned area with error bars (standard deviation).
 
