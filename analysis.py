@@ -24,3 +24,23 @@ def run_simulation(steps=150, wind=(1,0), filename="results.csv"):
     df.to_csv(filename, index=False)
     
     print(f"Saved results to {filename}")
+
+import matplotlib.pyplot as plt
+
+def plot_comparison(file1, file2, label1="No Wind", label2="Wind"):
+
+    df1 = pd.read_csv(file1)
+    df2 = pd.read_csv(file2)
+
+    plt.figure(figsize=(8,6))
+    
+    plt.plot(df1["time"], df1["burned"], label=label1)
+    plt.plot(df2["time"], df2["burned"], label=label2)
+    
+    plt.xlabel("Time Step")
+    plt.ylabel("Burned Area (cells)")
+    plt.title("Comparison of Burned Area Over Time")
+    plt.legend()
+    
+    plt.savefig("comparison_plot.png", dpi=300)
+    plt.show()
