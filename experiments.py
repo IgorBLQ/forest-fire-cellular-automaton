@@ -3,6 +3,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 from model import ForestFireModel
 
+np.random.seed(42)
 
 def run_multiple_simulations(humidity, runs=30, size=100):
 
