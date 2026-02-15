@@ -108,17 +108,9 @@ Interpretation:
 - Higher stochastic variance at low humidity.
 - Indication of near-critical behavior in low moisture regime.
 
-Generated figure:
-
-`humidity_analysis.png`
-
-This figure displays mean burned area with error bars (standard deviation).
-
 ---
 
 ## 📁 Project Structure
-
-```text
 forest-fire-cellular-automaton/
 │
 ├── model.py # Core cellular automaton implementation
@@ -128,9 +120,8 @@ forest-fire-cellular-automaton/
 ├── results # Generated figures
 ├── Wilfire Propagation A Probabilistic Cellular Automaton Approach # Scientific article 
 └── README.md # Project documentation
-´´´
 
-🚀 How to Run
+## 🚀 How to Run
 1️⃣ Install Dependencies
 Bash
 
@@ -157,21 +148,8 @@ Python
 np.random.seed(42)
 This ensures reproducible results across different machines.
 
-🧪 Scientific Contribution
-This project demonstrates:
-
-Emergent behavior from simple local probabilistic rules.
-
-Suppressive effect of humidity on wildfire propagation.
-
-Increased stochastic variability at low humidity.
-
-Applicability of Cellular Automata to environmental modeling.
-
-It highlights how discrete computational models can capture essential features of complex natural systems.
-
-🤖 LLM-Assisted Research Workflow
-An important aspect of this project was the structured use of a Large Language Model (LLM) as an intellectual assistant during development.
+# 🤖 LLM-Assisted Research Workflow
+## An important aspect of this project was the structured use of a Large Language Model (LLM) as an intellectual assistant during development.
 
 The LLM was used to:
 
