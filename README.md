@@ -118,3 +118,63 @@ This figure displays mean burned area with error bars (standard deviation).
 
 ## 📁 Project Structure
 
+forest-fire-cellular-automaton/
+│
+├── model.py # Core cellular automaton implementation
+├── analysis.py # Supporting analysis tools
+├── experiments.py # Automated ensemble simulations
+├── comma-separeted values # Statistical results
+├── results # Generated figures
+├── Wilfire Propagation A Probabilistic Cellular Automaton Approach # Scientific article 
+└── README.md # Project documentation
+
+
+---
+
+## 🚀 How to Run
+
+### 1️⃣ Install Dependencies
+
+```bash
+pip install numpy pandas matplotlib
+2️⃣ Run the Experiments
+python experiments.py
+
+
+This will automatically:
+
+Run 30 simulations per humidity level
+
+Compute mean and standard deviation
+
+Generate humidity_summary.csv
+
+Generate humidity_analysis.png
+
+🔁 Reproducibility
+
+The project uses:
+
+np.random.seed(42)
+
+LLM-Assisted Research Workflow
+
+An important aspect of this project was the structured use of a Large Language Model (LLM) as an intellectual assistant during development.
+
+The LLM was used to:
+
+Deepen theoretical understanding of Cellular Automata
+
+Refine probabilistic modeling strategies
+
+Formalize mathematical expressions
+
+Improve LaTeX scientific writing
+
+Validate statistical reasoning
+
+Structure the article and documentation
+
+The LLM acted as a research assistant — supporting conceptual clarity, not replacing critical reasoning.
+
+This reflects a modern hybrid human–AI research workflow.
