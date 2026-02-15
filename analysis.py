@@ -29,6 +29,9 @@ def run_simulation(steps=150, wind=(1,0), humidity=None, filename="results.csv")
 import matplotlib.pyplot as plt
 
 def plot_comparison(file1, file2, label1="No Wind", label2="Wind"):
+    plt.yscale("log")
+
+    plt.ylim(0, 50)
 
     df1 = pd.read_csv(file1)
     df2 = pd.read_csv(file2)
