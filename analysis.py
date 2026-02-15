@@ -2,9 +2,9 @@ import pandas as pd
 import numpy as np
 from model import ForestFireModel
 
-def run_simulation(steps=150, wind=(1,0), filename="results.csv"):
+def run_simulation(steps=150, wind=(1,0), humidity=None, filename="results.csv"):
     
-    model = ForestFireModel(size=100, wind=wind)
+    model = ForestFireModel(size=100, wind=wind, fixed_humidity=humidity)
     
     data = []
     
@@ -24,6 +24,7 @@ def run_simulation(steps=150, wind=(1,0), filename="results.csv"):
     df.to_csv(filename, index=False)
     
     print(f"Saved results to {filename}")
+
 
 import matplotlib.pyplot as plt
 
