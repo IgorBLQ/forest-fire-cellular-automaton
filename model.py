@@ -6,16 +6,25 @@ BURNING = 2
 BURNED = 3
 
 class ForestFireModel:
-    def __init__(self, size=100, tree_density=0.7, base_prob=0.3, wind=(1,0), wind_strength=0.5):
+    def __init__(self, size=100, tree_density=0.7, base_prob=0.3,
+                 wind=(1,0), wind_strength=0.5,
+                 fixed_humidity=None):
+
         self.size = size
         self.tree_density = tree_density
         self.base_prob = base_prob
         
-        self.wind = np.array(wind) / np.linalg.norm(wind)
+        self.wind = np.array(wind)
+        if np.linalg.norm(self.wind) != 0:
+            self.wind = self.wind / np.linalg.norm(self.wind)
         self.wind_strength = wind_strength
         
         self.grid = self.initialize_grid()
-        self.humidity = np.random.rand(size, size)
+        
+        if fixed_humidity is not None:
+            self.humidity = np.full((size, size), fixed_humidity)
+        else:
+            self.humidity = np.random.rand(size, size)
         
     def initialize_grid(self):
         grid = np.random.choice(
