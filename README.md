@@ -118,6 +118,7 @@ This figure displays mean burned area with error bars (standard deviation).
 
 ## 📁 Project Structure
 
+```text
 forest-fire-cellular-automaton/
 │
 ├── model.py # Core cellular automaton implementation
@@ -129,52 +130,61 @@ forest-fire-cellular-automaton/
 └── README.md # Project documentation
 
 
----
+🚀 How to Run
+1️⃣ Install Dependencies
+Bash
 
-## 🚀 How to Run
-
-### 1️⃣ Install Dependencies
-
-```bash
 pip install numpy pandas matplotlib
 2️⃣ Run the Experiments
+Bash
+
 python experiments.py
-
-
 This will automatically:
 
-Run 30 simulations per humidity level
+Run 30 simulations per humidity level.
 
-Compute mean and standard deviation
+Compute mean and standard deviation.
 
-Generate humidity_summary.csv
+Generate humidity_summary.csv.
 
-Generate humidity_analysis.png
+Generate humidity_analysis.png.
 
 🔁 Reproducibility
-
 The project uses:
 
+Python
+
 np.random.seed(42)
+This ensures reproducible results across different machines.
 
-LLM-Assisted Research Workflow
+🧪 Scientific Contribution
+This project demonstrates:
 
+Emergent behavior from simple local probabilistic rules.
+
+Suppressive effect of humidity on wildfire propagation.
+
+Increased stochastic variability at low humidity.
+
+Applicability of Cellular Automata to environmental modeling.
+
+It highlights how discrete computational models can capture essential features of complex natural systems.
+
+🤖 LLM-Assisted Research Workflow
 An important aspect of this project was the structured use of a Large Language Model (LLM) as an intellectual assistant during development.
 
 The LLM was used to:
 
-Deepen theoretical understanding of Cellular Automata
+Deepen theoretical understanding of Cellular Automata.
 
-Refine probabilistic modeling strategies
+Refine probabilistic modeling strategies.
 
-Formalize mathematical expressions
+Formalize mathematical expressions.
 
-Improve LaTeX scientific writing
+Improve LaTeX scientific writing.
 
-Validate statistical reasoning
+Validate statistical reasoning.
 
-Structure the article and documentation
+Structure the article and documentation.
 
-The LLM acted as a research assistant — supporting conceptual clarity, not replacing critical reasoning.
-
-This reflects a modern hybrid human–AI research workflow.
+The LLM acted as a research assistant — supporting conceptual clarity, not replacing critical reasoning. This reflects a modern hybrid human–AI research workflow.
