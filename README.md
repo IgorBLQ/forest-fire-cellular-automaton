@@ -128,7 +128,7 @@ forest-fire-cellular-automaton/
 ├── results # Generated figures
 ├── Wilfire Propagation A Probabilistic Cellular Automaton Approach # Scientific article 
 └── README.md # Project documentation
-
+´´´
 
 🚀 How to Run
 1️⃣ Install Dependencies
