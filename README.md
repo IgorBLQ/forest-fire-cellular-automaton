@@ -117,8 +117,6 @@ This figure displays mean burned area with error bars (standard deviation).
 ---
 
 ## 📁 Project Structure
-
-```text
 forest-fire-cellular-automaton/
 │
 ├── model.py # Core cellular automaton implementation
@@ -128,7 +126,6 @@ forest-fire-cellular-automaton/
 ├── results # Generated figures
 ├── Wilfire Propagation A Probabilistic Cellular Automaton Approach # Scientific article 
 └── README.md # Project documentation
-´´´
 
 🚀 How to Run
 1️⃣ Install Dependencies
