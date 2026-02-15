@@ -6,10 +6,13 @@ BURNING = 2
 BURNED = 3
 
 class ForestFireModel:
-    def __init__(self, size=100, tree_density=0.7, base_prob=0.3):
+    def __init__(self, size=100, tree_density=0.7, base_prob=0.3, wind=(1,0), wind_strength=0.5):
         self.size = size
         self.tree_density = tree_density
         self.base_prob = base_prob
+        
+        self.wind = np.array(wind) / np.linalg.norm(wind)
+        self.wind_strength = wind_strength
         
         self.grid = self.initialize_grid()
         self.humidity = np.random.rand(size, size)
@@ -21,14 +24,9 @@ class ForestFireModel:
             p=[1 - self.tree_density, self.tree_density]
         )
         
-        # Ignite center
         center = self.size // 2
         grid[center, center] = BURNING
         return grid
-
-    def count_burning_neighbors(self, i, j):
-        neighbors = self.grid[i-1:i+2, j-1:j+2]
-        return np.sum(neighbors == BURNING)
 
     def step(self):
         new_grid = self.grid.copy()
@@ -37,15 +35,30 @@ class ForestFireModel:
             for j in range(1, self.size - 1):
                 
                 if self.grid[i, j] == TREE:
-                    burning_neighbors = self.count_burning_neighbors(i, j)
+                    ignition_probability = 0
                     
-                    if burning_neighbors > 0:
-                        p = 1 - (1 - self.base_prob)**burning_neighbors
-                        p *= (1 - self.humidity[i, j])
-                        
-                        if np.random.rand() < p:
-                            new_grid[i, j] = BURNING
+                    for di in [-1, 0, 1]:
+                        for dj in [-1, 0, 1]:
                             
+                            if di == 0 and dj == 0:
+                                continue
+                                
+                            ni, nj = i + di, j + dj
+                            
+                            if self.grid[ni, nj] == BURNING:
+                                
+                                direction = np.array([di, dj])
+                                direction = direction / np.linalg.norm(direction)
+                                
+                                wind_factor = 1 + self.wind_strength * np.dot(self.wind, direction)
+                                
+                                local_p = self.base_prob * (1 - self.humidity[i, j]) * wind_factor
+                                
+                                ignition_probability = 1 - (1 - ignition_probability) * (1 - local_p)
+                    
+                    if np.random.rand() < ignition_probability:
+                        new_grid[i, j] = BURNING
+                        
                 elif self.grid[i, j] == BURNING:
                     new_grid[i, j] = BURNED
                     
